@@ -1,9 +1,8 @@
 ---
-import { Image } from "astro:assets";
-import food from "../assets/food1.jpg";
-import food2 from "../assets/food2.jpg";
-import tables from "../assets/tables.jpg";
-import facade from "../assets/restaurant-facade.jpg";
+import food from "../assets/food1.jpg?url";
+import food2 from "../assets/food2.jpg?url";
+import tables from "../assets/tables.jpg?url";
+import facade from "../assets/restaurant-facade.jpg?url";
 ---
 
 <section id="press-section" class="press-section">
@@ -15,7 +14,7 @@ import facade from "../assets/restaurant-facade.jpg";
       <div class="swiper-slide">
         <div class="press-card">
           <div class="image-container">
-            <Image class="image-hero" src={food} alt="Food Image" />
+            <img class="image-hero" src={food} alt="Food Image" />
           </div>
           <div class="press-content">
             <p class="article-title">
@@ -30,7 +29,7 @@ import facade from "../assets/restaurant-facade.jpg";
       <div class="swiper-slide">
         <div class="press-card">
           <div class="image-container">
-            <Image class="image-hero" src={food2} alt="Food Image" />
+            <img class="image-hero" src={food2} alt="Food Image" />
           </div>
           <div class="press-content">
             <p class="article-title">CUISINE INSPIRED</p>
@@ -45,7 +44,7 @@ import facade from "../assets/restaurant-facade.jpg";
       <div class="swiper-slide">
         <div class="press-card">
           <div class="image-container">
-            <Image class="image-hero" src={tables} alt="Food Image" />
+            <img class="image-hero" src={tables} alt="Food Image" />
           </div>
           <div class="press-content">
             <p class="article-title">THRILLIST</p>
@@ -60,7 +59,7 @@ import facade from "../assets/restaurant-facade.jpg";
       <div class="swiper-slide">
         <div class="press-card">
           <div class="image-container">
-            <Image class="image-hero" src={facade} alt="Food Image" />
+            <img class="image-hero" src={facade} alt="Food Image" />
           </div>
           <div class="press-content">
             <p class="article-title">THRILLIST</p>
@@ -75,7 +74,7 @@ import facade from "../assets/restaurant-facade.jpg";
       <div class="swiper-slide">
         <div class="press-card">
           <div class="image-container">
-            <Image class="image-hero" src={food} alt="Food Image" />
+            <img class="image-hero" src={food} alt="Food Image" />
           </div>
           <div class="press-content">
             <p class="article-title">THRILLIST</p>
@@ -90,7 +89,7 @@ import facade from "../assets/restaurant-facade.jpg";
       <div class="swiper-slide">
         <div class="press-card">
           <div class="image-container">
-            <Image class="image-hero" src={food2} alt="Food Image" />
+            <img class="image-hero" src={food2} alt="Food Image" />
           </div>
           <div class="press-content">
             <p class="article-title">THRILLIST</p>

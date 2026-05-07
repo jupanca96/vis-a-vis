@@ -1,15 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import tables from "../assets/tables.jpg";
+import tables from "../assets/tables.jpg?url";
 ---
 
 <div class="container-tables">
-  <Image
+  <img
     class="image-tables"
     src={tables}
     alt="Tables Image"
-    width={1600}
-    height={1000}
   />
 </div>
 

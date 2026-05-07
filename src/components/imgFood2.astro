@@ -1,15 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import food from "../assets/food2.jpg";
+import food from "../assets/food2.jpg?url";
 ---
 
 <div class="section-image">
-  <Image
+  <img
     class="section-img"
     src={food}
     alt="Food Image"
-    width={1600}
-    height={900}
   />
 </div>
 

@@ -1,15 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import caffee from "../assets/caffee2.jpg";
+import caffee from "../assets/caffee2.jpg?url";
 ---
 
 <div class="section-image">
-  <Image 
-    class="section-img" 
-    src={caffee} 
+  <img
+    class="section-img"
+    src={caffee}
     alt="Caffee Image"
-    width={1600}
-    height={1000}
   />
 </div>
 
