@@ -188,11 +188,12 @@ import logo from "../assets/logo.png?url";
 </style>
 
 <script>
+ document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("main-header");
-  let ticking = false;
-
   const toggleBtn = document.getElementById("menu-toggle");
   const navMenu = document.getElementById("nav-menu");
+
+  let ticking = false;
 
   toggleBtn?.addEventListener("click", () => {
     navMenu?.classList.toggle("active");
@@ -213,4 +214,5 @@ import logo from "../assets/logo.png?url";
       ticking = true;
     }
   });
+});
 </script>
