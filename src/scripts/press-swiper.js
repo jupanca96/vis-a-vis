@@ -4,27 +4,33 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-new Swiper(".press-carousel", {
-  modules: [Navigation],
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".press-carousel");
 
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
+  if (!carousel) return;
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  new Swiper(".press-carousel", {
+    modules: [Navigation],
 
-  breakpoints: {
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 20,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
 
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 30,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
     },
-  },
+  });
 });
