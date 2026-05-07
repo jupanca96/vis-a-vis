@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import tables from "../assets/tables.jpg";
+---
+
+<div class="container-tables">
+  <Image
+    class="image-tables"
+    src={tables}
+    alt="Tables Image"
+    width={1600}
+    height={1000}
+  />
+</div>
+
+<style>
+  .container-tables {
+    width: 100%;
+    height: 80vh; /* más flexible que 800px */
+    min-height: 500px;
+    max-height: 800px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .image-tables {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 📱 MOBILE */
+  @media (max-width: 1023px) {
+    .container-tables {
+      height: 55vh;
+      min-height: 300px;
+    }
+  }
+  .container-tables::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+</style>

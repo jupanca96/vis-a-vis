@@ -1,0 +1,250 @@
+<section class="contact-section">
+  <h2 class="contact-title">CONTACT</h2>
+
+  <form class="contact-form">
+    <div class="form-group">
+      <label for="name">NAME — <i>REQUIRED</i></label>
+      <input type="text" id="name" name="name" placeholder="NAME" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">EMAIL — <i>REQUIRED</i></label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="EMAIL"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">PHONE NUMBER — <i>REQUIRED</i></label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="PHONE NUMBER"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="subject"
+        >WHAT ARE YOU GETTING IN TOUCH ABOUT? — <i>OPTIONAL</i></label
+      >
+      <div class="select-wrapper">
+        <select id="subject" name="subject">
+          <option value="" disabled selected
+            >WHAT ARE YOU GETTING IN TOUCH ABOUT?</option
+          >
+          <option value="events">EVENTS</option>
+          <option value="press">PRESS</option>
+          <option value="other">OTHER</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">YOUR MESSAGE — <i>REQUIRED</i></label>
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        placeholder="YOUR MESSAGE"
+        required></textarea>
+    </div>
+
+    <button type="submit" class="send-button">SEND</button>
+  </form>
+
+  <p class="recaptcha-text">THIS SITE IS PROTECTED BY RECAPTCHA.</p>
+</section>
+
+<style>
+  .contact-section {
+    background-color: #f4f1e9;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3d1212;
+    font-family: sans-serif; /* Usa la misma que el resto del sitio */
+  }
+
+  .contact-title {
+    font-size: 3rem;
+    letter-spacing: 8px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .form-group label i {
+    font-style: italic;
+    font-weight: normal;
+    opacity: 0.8;
+  }
+
+  /* Estilo común para inputs, select y textarea */
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1.5px solid #000; /* Borde negro definido */
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #3d1212;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(61, 18, 18, 0.6);
+  }
+
+  /* Quitar el estilo por defecto del select para poner la flecha personalizada */
+  .select-wrapper {
+    position: relative;
+  }
+
+  select {
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .select-wrapper::after {
+    content: "▼";
+    font-size: 0.8rem;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .send-button {
+    display: block;
+    margin: 40px auto 20px;
+    padding: 15px 40px;
+    background-color: transparent;
+    border: 1.5px solid #000;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .send-button:hover {
+    background-color: #000;
+    color: #f4f1e9;
+  }
+
+  .recaptcha-text {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    opacity: 0.7;
+    text-align: center;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #3d1212;
+    box-shadow: 0 0 0 1px rgba(61, 18, 18, 0.2);
+  }
+
+  input,
+  textarea,
+  select {
+    transition: all 0.2s ease;
+  }
+
+  /* 📱 MOBILE */
+  @media (max-width: 1023px) {
+    .contact-section {
+      padding: 60px 20px;
+    }
+
+    .contact-title {
+      font-size: 2rem;
+      letter-spacing: 4px;
+      margin-bottom: 30px;
+    }
+
+    .contact-form {
+      max-width: 100%;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 12px;
+      font-size: 0.85rem;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    .send-button {
+      width: 100%;
+      max-width: 280px;
+      padding: 14px 20px;
+      font-size: 0.85rem;
+    }
+
+    .recaptcha-text {
+      font-size: 0.65rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-title {
+      font-size: 1.6rem;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 10px;
+    }
+  }
+</style>

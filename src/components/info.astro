@@ -1,0 +1,113 @@
+<section id="visit-section" class="visit-section">
+  <div class="container">
+    <h1 class="title">VISIT</h1>
+
+    <div class="info">
+      <p>Van Vorst Park, Jersey Ave entrance</p>
+      <p>646-688-4180</p>
+      <p>INFO@VISAVIS.COM</p>
+    </div>
+
+    <div class="hours">
+      <div class="col">
+        <h3>BRUNCH</h3>
+        <p>12:00 TO 3:00PM MONDAY - FRIDAY</p>
+        <p>11:00 TO 3:00PM SATURDAY & SUNDAY</p>
+      </div>
+
+      <div class="col">
+        <h3>DINNER</h3>
+        <p>5:00 TO 10:00 PM 7 DAYS A WEEK</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .visit-section {
+    background-color: #d9d4c7;
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 64px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    color: #3b0f0f;
+  }
+
+  .info {
+    margin-bottom: 40px;
+  }
+
+  .info p {
+    margin: 5px 0;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #3b0f0f;
+  }
+
+  .hours {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+
+  .col h3 {
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    color: #3b0f0f;
+  }
+
+  .col p {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin: 5px 0;
+    color: #3b0f0f;
+  }
+
+  .hours {
+    border-top: 1px solid rgba(59, 15, 15, 0.2);
+    padding-top: 30px;
+  }
+
+  @media (max-width: 1023px) {
+    .title {
+      font-size: 40px;
+      letter-spacing: 2px;
+    }
+
+    .info p {
+      font-size: 13px;
+      letter-spacing: 1.5px;
+    }
+
+    .hours {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .col h3 {
+      font-size: 16px;
+    }
+
+    .col p {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+    }
+
+    .visit-section {
+      padding: 50px 20px;
+    }
+  }
+</style>

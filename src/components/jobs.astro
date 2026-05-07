@@ -1,0 +1,103 @@
+<section class="jobs-section">
+  <div class="container">
+    <h2 class="jobs-title">JOBS</h2>
+    <p class="jobs-text">
+      WE'D LOVE FOR YOU TO JOIN OUR TEAM! PLEASE SEND US YOUR RESUME AND COVER
+      LETTER FOR CONSIDERATION.
+    </p>
+    <a href="mailto:careers@example.com" class="jobs-button"> JOIN THE TEAM </a>
+  </div>
+</section>
+
+<style>
+  .jobs-section {
+    background-color: #d9d4c7;
+    padding: 80px 20px;
+    text-align: center;
+    color: #3d1212;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .jobs-title {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+
+  .jobs-text {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 700px;
+    text-transform: uppercase;
+  }
+
+  .jobs-button {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 2px solid #3d1212;
+    color: #3d1212;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+
+  .jobs-button:hover {
+    background-color: #3d1212;
+    color: #f4f1e9;
+  }
+
+  /* 📱 MOBILE */
+  @media (max-width: 1023px) {
+    .jobs-section {
+      padding: 60px 20px;
+    }
+
+    .jobs-title {
+      font-size: 2rem;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .jobs-text {
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .jobs-button {
+      padding: 12px 25px;
+      font-size: 0.8rem;
+    }
+  }
+
+  /* 📱 MOBILE PEQUEÑO */
+  @media (max-width: 480px) {
+    .jobs-title {
+      font-size: 1.6rem;
+    }
+
+    .jobs-text {
+      font-size: 0.75rem;
+    }
+
+    .jobs-button {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+</style>

@@ -1,0 +1,216 @@
+---
+import logo from "../assets/logo.png?url";
+---
+
+<header id="main-header" class="header">
+  <div class="address-container">
+    <div class="address">Van Vorst Park, Jersey Ave entrance</div>
+  </div>
+
+  <div class="header-content">
+    <img class="logo-header" src={logo} alt="Vis a Vis Logo" />
+
+    <button class="menu-toggle" id="menu-toggle"> ☰ </button>
+
+    <nav class="items" id="nav-menu">
+      <a href="#visit-section" class="item">VISIT</a>
+      <a href="#about-section" class="item">ABOUT</a>
+      <a href="#menu-section" class="item">MENUS</a>
+      <a href="#press-section" class="item">PRESS</a>
+      <div class="item">GIFT CARDS</div>
+      <div class="main-item">RESERVATIONS</div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    height: 240px;
+    width: 100%;
+    background-color: rgb(216 196 176);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Fijo arriba */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    transition: all 0.4s ease-in-out;
+    gap: 20px;
+  }
+
+  .address-container {
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 50px;
+    margin-bottom: 20px;
+  }
+
+  .logo-header {
+    width: 190px;
+    height: auto;
+    transition: width 0.4s ease;
+  }
+
+  /* ESTADO SCROLLED (Solo Desktop) */
+  @media (min-width: 1024px) {
+    .header.scrolled {
+      height: 120px; /* Alto reducido */
+      flex-direction: row;
+    }
+
+    .header.scrolled .address-container {
+      opacity: 0;
+      max-height: 0;
+      margin: 0;
+      overflow: hidden;
+      display: none;
+    }
+
+    .header.scrolled .header-content {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+    }
+
+    .header.scrolled .logo-header {
+      width: 180px; /* Logo más pequeño */
+    }
+  }
+
+  /* Estilos base de items (se mantienen igual) */
+  .items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .item,
+  .main-item {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .item:hover,
+  .main-item:hover {
+    color: #3b0f0f;
+  }
+  .main-item:hover {
+    border: 2px solid #3b0f0f;
+  }
+
+  .main-item {
+    border: 1px solid #000;
+    padding: 5px 10px;
+  }
+
+  /* BOTÓN HAMBURGUESA */
+  .menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* MOBILE */
+  @media (max-width: 1023px) {
+    .header {
+      height: auto;
+      padding: 20px;
+    }
+
+    .header-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-header {
+      width: 140px;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    /* MENÚ OCULTO */
+    .items {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: rgb(216 196 176);
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 20px 0;
+
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+
+    /* MENÚ ACTIVO */
+    .items.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .item,
+    .main-item {
+      font-size: 16px;
+    }
+
+    .address-container {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const header = document.getElementById("main-header");
+  let ticking = false;
+
+  const toggleBtn = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  toggleBtn?.addEventListener("click", () => {
+    navMenu?.classList.toggle("active");
+  });
+
+  function updateHeader() {
+    if (window.scrollY > 50) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  });
+</script>

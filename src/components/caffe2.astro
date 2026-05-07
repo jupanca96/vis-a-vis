@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import caffee from "../assets/caffee2.jpg";
+---
+
+<div class="section-image">
+  <Image 
+    class="section-img" 
+    src={caffee} 
+    alt="Caffee Image"
+    width={1600}
+    height={1000}
+  />
+</div>
+
+<style>
+    /* SISTEMA GLOBAL DE IMÁGENES */
+.section-image {
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  max-height: 800px;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 1023px) {
+  .section-image {
+    height: 55vh;
+    min-height: 280px;
+  }
+}
+</style>

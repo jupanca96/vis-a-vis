@@ -1,0 +1,39 @@
+---
+import map from "../assets/map.png?url";
+---
+
+<div class="container-map">
+  <img class="image-map" src={map} alt="Restaurant Map" />
+</div>
+
+<style>
+  .container-map {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Imagen siempre bien ajustada */
+  .image-map {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 📱 MOBILE */
+  @media (max-width: 1023px) {
+    .container-map {
+      height: 50vh; /* más pequeño que hero */
+      min-height: 300px;
+    }
+  }
+
+  .container-map::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+</style>

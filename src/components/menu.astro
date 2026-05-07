@@ -1,0 +1,306 @@
+<section id="menu-section" class="menu-section">
+  <div class="container">
+    <h1 class="title">MENUS</h1>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-menu="dinner">DINNER</button>
+      <button class="tab" data-menu="brunch">BRUNCH</button>
+      <button class="tab" data-menu="drinks">DRINKS</button>
+      <button class="tab" data-menu="agave">AGAVE & SPIRITS</button>
+      <button class="tab" data-menu="nye">NEW YEAR'S EVE</button>
+    </div>
+
+    <button class="btn">DOWNLOAD PDF</button>
+
+    <!-- MENUS -->
+    <div class="menu-content active" id="dinner">
+      <div class="container-items-menu">
+        <h2>PARA LA MESA</h2>
+        <div class="items">
+          <div class="item">
+            <h3>GUACAMOLE</h3>
+            <p>avocado, lime, chili</p>
+            <span>18</span>
+          </div>
+
+          <div class="item">
+            <h3>CHIPS & SALSA</h3>
+            <p>roasted tomato, habanero</p>
+            <span>12</span>
+          </div>
+        </div>
+
+        <div class="items">
+          <div class="item">
+            <h3>MAITAKE TACOS</h3>
+            <p>mushroom, salsa negra</p>
+            <span>25</span>
+          </div>
+
+          <div class="item">
+            <h3>WAGYU STEAK</h3>
+            <p>mole, potatoes</p>
+            <span>85</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-content" id="brunch">
+      <div class="container-items-menu">
+        <h2>BRUNCH</h2>
+        <div class="items">
+          <div class="item">
+            <h3>HUEVOS RANCHEROS</h3>
+            <p>salsa roja, tortillas</p>
+            <span>22</span>
+          </div>
+
+          <div class="item">
+            <h3>AVOCADO TOAST</h3>
+            <p>poached egg, chili oil</p>
+            <span>18</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="item">
+            <h3>PANCAKES</h3>
+            <p>maple syrup, berries</p>
+            <span>16</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-content" id="drinks">
+      <div class="container-items-menu">
+        <h2>COCKTAILS</h2>
+        <div class="items">
+          <div class="item">
+            <h3>MARGARITA</h3>
+            <p>tequila, lime</p>
+            <span>15</span>
+          </div>
+
+          <div class="item">
+            <h3>PALOMA</h3>
+            <p>grapefruit, soda</p>
+            <span>14</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="item">
+            <h3>MEZCAL SOUR</h3>
+            <p>mezcal, citrus</p>
+            <span>16</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-content" id="agave">
+      <div class="container-items-menu">
+        <h2>AGAVE</h2>
+        <div class="items">
+          <div class="item">
+            <h3>ESPADIN</h3>
+            <span>12</span>
+          </div>
+
+          <div class="item">
+            <h3>TOBALA</h3>
+            <span>18</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-content" id="nye">
+      <div class="container-items-menu">
+        <h2>SPECIAL MENU</h2>
+        <div>
+          <div class="item">
+            <h3>TASTING MENU</h3>
+            <p>5 courses</p>
+            <span>120</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .menu-section {
+    background: #d9d4c7;
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 64px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    color: #3b0f0f;
+  }
+
+  /* TABS */
+  .tabs {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tab {
+    background: none;
+    border: none;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 5px 10px;
+    white-space: nowrap;
+  }
+
+  .tab.active {
+    border: 1px solid #3b0f0f;
+  }
+
+  /* BOTÓN */
+  .btn {
+    margin: 20px 0 50px;
+    padding: 10px 20px;
+    border: 2px solid #3b0f0f;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  /* CONTENIDO */
+  .container-items-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .items {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  h2 {
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  .item {
+    margin-bottom: 20px;
+    max-width: 250px;
+  }
+
+  .item h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  .item p {
+    font-size: 13px;
+    margin: 5px 0;
+  }
+
+  .item span {
+    font-size: 13px;
+  }
+
+  /* ocultar menus */
+  .menu-content {
+    display: none;
+  }
+
+  .menu-content.active {
+    display: block;
+  }
+
+  /* 📱 MOBILE */
+  @media (max-width: 1023px) {
+    .title {
+      font-size: 40px;
+      letter-spacing: 2px;
+    }
+
+    /* Tabs tipo scroll horizontal */
+    .tabs {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      padding-bottom: 10px;
+    }
+
+    .tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab {
+      font-size: 13px;
+    }
+
+    /* Items en columna */
+    .items {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .item {
+      max-width: 100%;
+    }
+
+    .container-items-menu {
+      gap: 40px;
+    }
+
+    .btn {
+      margin: 20px 0 30px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tab");
+    const menus = document.querySelectorAll(".menu-content");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        // Remover active de todos los tabs
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        // Ocultar todos los menús
+        menus.forEach((menu) => menu.classList.remove("active"));
+
+        // Mostrar el menú correspondiente
+        const id = tab.dataset.menu;
+        const activeMenu = document.getElementById(id);
+
+        if (activeMenu) {
+          activeMenu.classList.add("active");
+
+          // Scroll suave hacia el contenido (mejora UX en mobile)
+          activeMenu.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+  });
+</script>
