@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("menu-toggle");
   const navMenu = document.getElementById("nav-menu");
 
+  console.log("Header script loaded");
+
   let ticking = false;
 
   toggleBtn?.addEventListener("click", () => {
