@@ -1,29 +1,22 @@
-  document.addEventListener("DOMContentLoaded", () => {
-    const tabs = document.querySelectorAll(".tab");
-    const menus = document.querySelectorAll(".menu-content");
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".menu-content");
 
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        // Remover active de todos los tabs
-        tabs.forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const target = tab.getAttribute("data-menu");
 
-        // Ocultar todos los menús
-        menus.forEach((menu) => menu.classList.remove("active"));
+      // Resetear
+      tabs.forEach(t => t.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
 
-        // Mostrar el menú correspondiente
-        const id = tab.dataset.menu;
-        const activeMenu = document.getElementById(id);
-
-        if (activeMenu) {
-          activeMenu.classList.add("active");
-
-          // Scroll suave hacia el contenido (mejora UX en mobile)
-          activeMenu.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      });
+      // Activar
+      tab.classList.add("active");
+      const activeContent = document.getElementById(target);
+      if (activeContent) {
+        activeContent.classList.add("active");
+      }
+      
+      // Auto-scroll suave al centro en móviles
+      tab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     });
   });

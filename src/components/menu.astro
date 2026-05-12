@@ -1,275 +1,428 @@
+---
+const menuData = [
+  {
+    id: "soup",
+    title: "SOUP OF THE DAY",
+    items: [
+      {
+        name: "DAILY SOUP",
+        desc: "Fresh seasonal ingredients made daily",
+        price: "$8.50",
+      },
+    ],
+  },
+  {
+    id: "salads",
+    title: "SALADS",
+    items: [
+      {
+        name: "TUNA",
+        desc: "Lettuce, onion, eggs, cherry tomatoes, olives, corn, shaved parmesan, potato and house dressing",
+        price: "$18.00",
+      },
+      {
+        name: "SALMON BOWL",
+        desc: "Kale, cherry tomatoes, smoked salmon, cucumber, avocado, sesame seeds and scallions with balsamic dressing",
+        price: "$18.00",
+      },
+      {
+        name: "QUINOA SALAD",
+        desc: "Kale, dried cranberries, sunflower seeds, almond flakes, cherry tomatoes, chickpeas and feta cheese with house dressing",
+        price: "$16.00",
+      },
+      {
+        name: "ROAST BEET",
+        desc: "Grapefruit, beets with homemade creamy yogurt and pecans",
+        price: "$16.00",
+      },
+      {
+        name: "GREEK",
+        desc: "Tomato, cucumber, kalamata olives, red onion, pepperoncini, oregano, evoo, fresh lemon juice and feta cheese",
+        price: "$16.00",
+      },
+    ],
+  },
+  {
+    id: "classics",
+    title: "VIS-A-VIS CLASSICS",
+    items: [
+      {
+        name: "OVERNIGHT OATS",
+        desc: "Creamy oats soaked in almond milk with banana, blueberries and almond butter and coconut flakes",
+        price: "$8.50",
+      },
+      {
+        name: "CRISPY BUTTERMILK WAFFLE",
+        desc: "Served with seasonal fruits, maple syrup",
+        price: "$14.00",
+      },
+      {
+        name: "SHAKSHUKA",
+        desc: "2 poached eggs over roasted spicy pepper, tomato, shallots, served w/ sourdough",
+        price: "$18.00",
+      },
+      {
+        name: "HUMMUS PLATE",
+        desc: "Homemade hummus served with cherry tomatoes, olives, cucumbers, and toasted bread",
+        price: "$12.50",
+      },
+      {
+        name: "OLD SCHOOL MEATBALLS",
+        desc: "Roasted tomato sauce, fresh ricota, basil. Served w/ sourdough filone",
+        price: "$16.00",
+      },
+      {
+        name: "VIS-A-VIS BREAKFAST",
+        desc: "2 Eggs over easy served w/ hummus, tabouleh, home fries and mixed green",
+        price: "$16.50",
+      },
+      {
+        name: "FRENCH TOAST",
+        desc: "Brioche french toast, mascarpone cream, mixed berries, vermont maple syrup",
+        price: "$16.00",
+      },
+      {
+        name: "ACAI BOWL",
+        desc: "Fresh acai pulp blended with strawberry and banana, topped with granola and coconut flakes",
+        price: "$16.00",
+      },
+    ],
+  },
+  {
+    id: "sandwiches",
+    title: "GOURMET SANDWICHES",
+    items: [
+      {
+        name: "CAPRESE",
+        desc: "French baguette, pesto, fresh mozzarella, fresh tomatoes, arugula, olive oil and balsamic glaze",
+        price: "$14.50",
+      },
+      {
+        name: "SABICH",
+        desc: "Sourdough bread, roasted eggplant, hummus, tomatoes, cucumbers, pickles, eggs, tahini, parsley",
+        price: "$15.50",
+      },
+      {
+        name: "AVOCADO TOAST",
+        desc: "Sourdough bread, smashed avocado, microgreen, cherry tomato, chili flakes and sesame seeds, drizzled evoo",
+        price: "$15.00",
+      },
+      {
+        name: "DELIGHT HUMMUS & AVOCADO",
+        desc: "French baguette, avocado, homemade hummus, tomatoes, and chimichurri",
+        price: "$16.00",
+      },
+      {
+        name: "ZAATAR TOAST",
+        desc: "Sourdough filone whipped zaatar cream cheese, smoked salmon, tomatoes, onion, capers and olive oil",
+        price: "$18.00",
+      },
+      {
+        name: "TUNA SANDWICH",
+        desc: "Sourdough bread, micro arugula, onion, tomatoes and egg",
+        price: "$16.00",
+      },
+      {
+        name: "TURKEY SANDWICH",
+        desc: "Baguette bread, lettuce, tomatoes, swiss cheese, dijon",
+        price: "$16.00",
+      },
+      {
+        name: "ROAST BEEF",
+        desc: "French Baguette, garlic mayo, roast beef, onion and pickles, peppers, arugula and shaved parmesan",
+        price: "$16.00",
+      },
+    ],
+  },
+  {
+    id: "classic-drinks",
+    title: "CLASSIC DRINKS",
+    items: [
+      {
+        name: "ESPRESSO",
+        desc: "A double shot of espresso with a rich body, balanced intensity and a smooth golden crema",
+        price: "$4.00",
+      },
+      {
+        name: "MACCHIATO",
+        desc: "A classic macchiato with bold espresso and just enough milk to soften the edge",
+        price: "$4.50",
+      },
+      {
+        name: "AMERICANO",
+        desc: "Bold espresso finished with hot water for a smooth, balanced cup",
+        price: "$4.75",
+      },
+      {
+        name: "CORTADO",
+        desc: "Equal parts espresso and steamed milk in perfect balance",
+        price: "$4.75",
+      },
+      {
+        name: "CAPPUCCINO",
+        desc: "Espresso, steamed milk and a thicker layer of microfoam for a smaller cup with structure and balance",
+        price: "$5.00",
+      },
+      {
+        name: "FLAT WHITE",
+        desc: "Double espresso and finely textured milk for a velvety cup where the coffee stays forward",
+        price: "$4.75",
+      },
+      {
+        name: "LATTE",
+        desc: "A double shot latte with velvety texture, fine microfoam and a richer more pronounced coffee profile",
+        price: "$5.50",
+      },
+      {
+        name: "MOCHA",
+        desc: "A lower-sugar mocha with espresso, silky steamed milk, and organic cocoa",
+        price: "$6.50",
+      },
+      {
+        name: "DRIP",
+        desc: "A smooth, low-acid drip with a round body and notes of dark chocolate and toasted nuts",
+        price: "$3.75",
+      },
+      {
+        name: "RED EYE",
+        desc: "Drip coffee with a shot of espresso for a bolder cup and an extra boost of caffeine",
+        price: "$5.50",
+      },
+    ],
+  },
+  {
+    id: "cold-brew",
+    title: "COLD BREW",
+    items: [
+      {
+        name: "CLASSIC",
+        desc: "Rich and round, with chocolate depth, gentle sweetness, and low acidity",
+        price: "$5.50",
+      },
+      {
+        name: "BERRY NITRO ELIXIR",
+        desc: "Nitro cold brew with strawberry co-fermented coffee and chocolate depth, silky and softly foamed",
+        price: "$6.50",
+      },
+    ],
+  },
+  {
+    id: "alternative",
+    title: "ALTERNATIVE DRINKS",
+    items: [
+      {
+        name: "MATCHA LATTE",
+        desc: "Stone-ground ceremonial matcha with a silky body, gentle umami, and an elegant finish",
+        price: "$6.00",
+      },
+      {
+        name: "CHAI LATTE",
+        desc: "A refined chai latte with gentle spice, creamy texture, and a smooth finish",
+        price: "$5.50",
+      },
+      {
+        name: "ORGANIC CHOCOLATE",
+        desc: "Low-sugar chocolate made with heirloom colombian cacao",
+        price: "$6.00",
+      },
+    ],
+  },
+  {
+    id: "ice-drinks",
+    title: "ICE DRINKS",
+    items: [
+      {
+        name: "RASPBERRY TEA",
+        desc: "Housemade tea with real raspberry and a light, fruit-forward profile",
+        price: "$5.50",
+      },
+      {
+        name: "FRESH LEMONADE",
+        desc: "Homemade lemonade with fresh citrus, balanced sweetness, and a lively finish",
+        price: "$4.50",
+      },
+      {
+        name: "FRESH ORANGE JUICE",
+        desc: "Fresh-pressed orange juice, pure and naturally sweet",
+        price: "$5.50",
+      },
+    ],
+  },
+  {
+    id: "sides",
+    title: "VARIATIONS & SIDES",
+    items: [
+      { name: "AVOCADO", desc: "Side portion", price: "$3.75" },
+      { name: "TURKEY BACON", desc: "Side portion", price: "$4.00" },
+      { name: "SMOKED SALMON", desc: "Side portion", price: "$6.50" },
+      { name: "ROASTED POTATO", desc: "Side portion", price: "$3.50" },
+      { name: "SUNNY-SIDE EGG", desc: "Side portion", price: "$3.00" },
+      { name: "EXTRA SHOT", desc: "Coffee variation", price: "$1.75" },
+      { name: "MILK SUBS", desc: "Almond, Oat, etc.", price: "$0.75" },
+      { name: "AU LAIT", desc: "Variation", price: "$0.50" },
+      { name: "DECAF", desc: "Variation", price: "$1.0" },
+    ],
+  },
+];
+---
+
 <section id="menu-section" class="menu-section">
   <div class="container">
-    <h1 class="title">MENUS</h1>
+    <h1 class="title">VIS·À·VIS MENU</h1>
 
-    <!-- Tabs -->
-    <div class="tabs">
-      <button class="tab active" data-menu="dinner">DINNER</button>
-      <button class="tab" data-menu="brunch">BRUNCH</button>
-      <button class="tab" data-menu="drinks">DRINKS</button>
-      <button class="tab" data-menu="agave">AGAVE & SPIRITS</button>
-      <button class="tab" data-menu="nye">NEW YEAR'S EVE</button>
-    </div>
-
-    <button class="btn">DOWNLOAD PDF</button>
-
-    <!-- MENUS -->
-    <div class="menu-content active" id="dinner">
-      <div class="container-items-menu">
-        <h2>PARA LA MESA</h2>
-        <div class="items">
-          <div class="item">
-            <h3>GUACAMOLE</h3>
-            <p>avocado, lime, chili</p>
-            <span>18</span>
-          </div>
-
-          <div class="item">
-            <h3>CHIPS & SALSA</h3>
-            <p>roasted tomato, habanero</p>
-            <span>12</span>
-          </div>
-        </div>
-
-        <div class="items">
-          <div class="item">
-            <h3>MAITAKE TACOS</h3>
-            <p>mushroom, salsa negra</p>
-            <span>25</span>
-          </div>
-
-          <div class="item">
-            <h3>WAGYU STEAK</h3>
-            <p>mole, potatoes</p>
-            <span>85</span>
-          </div>
-        </div>
+    <div class="tabs-container">
+      <div class="tabs">
+        {
+          menuData.map((cat, index) => (
+            <button
+              class={`tab ${index === 0 ? "active" : ""}`}
+              data-menu={cat.id}
+            >
+              {cat.title}
+            </button>
+          ))
+        }
       </div>
     </div>
 
-    <div class="menu-content" id="brunch">
-      <div class="container-items-menu">
-        <h2>BRUNCH</h2>
-        <div class="items">
-          <div class="item">
-            <h3>HUEVOS RANCHEROS</h3>
-            <p>salsa roja, tortillas</p>
-            <span>22</span>
+    <div class="menu-display">
+      {
+        menuData.map((cat, index) => (
+          <div
+            class={`menu-content ${index === 0 ? "active" : ""}`}
+            id={cat.id}
+          >
+            <h2 class="category-title">{cat.title}</h2>
+            <div class="items-grid">
+              {cat.items.map((item) => (
+                <div class="menu-item">
+                  <div class="item-header">
+                    <h3>{item.name}</h3>
+                    <span class="dots" />
+                    <span class="price">{item.price}</span>
+                  </div>
+                  {item.desc && <p>{item.desc}</p>}
+                </div>
+              ))}
+            </div>
           </div>
-
-          <div class="item">
-            <h3>AVOCADO TOAST</h3>
-            <p>poached egg, chili oil</p>
-            <span>18</span>
-          </div>
-        </div>
-
-        <div>
-          <div class="item">
-            <h3>PANCAKES</h3>
-            <p>maple syrup, berries</p>
-            <span>16</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-content" id="drinks">
-      <div class="container-items-menu">
-        <h2>COCKTAILS</h2>
-        <div class="items">
-          <div class="item">
-            <h3>MARGARITA</h3>
-            <p>tequila, lime</p>
-            <span>15</span>
-          </div>
-
-          <div class="item">
-            <h3>PALOMA</h3>
-            <p>grapefruit, soda</p>
-            <span>14</span>
-          </div>
-        </div>
-
-        <div>
-          <div class="item">
-            <h3>MEZCAL SOUR</h3>
-            <p>mezcal, citrus</p>
-            <span>16</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-content" id="agave">
-      <div class="container-items-menu">
-        <h2>AGAVE</h2>
-        <div class="items">
-          <div class="item">
-            <h3>ESPADIN</h3>
-            <span>12</span>
-          </div>
-
-          <div class="item">
-            <h3>TOBALA</h3>
-            <span>18</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="menu-content" id="nye">
-      <div class="container-items-menu">
-        <h2>SPECIAL MENU</h2>
-        <div>
-          <div class="item">
-            <h3>TASTING MENU</h3>
-            <p>5 courses</p>
-            <span>120</span>
-          </div>
-        </div>
-      </div>
+        ))
+      }
     </div>
   </div>
 </section>
 
 <style>
   .menu-section {
-    background: #d9d4c7;
-    padding: 80px 20px;
-    text-align: center;
+    background: #fdfcf9;
+    padding: 60px 20px;
+    min-height: 80vh;
   }
 
   .title {
-    font-size: 64px;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
-    color: #3b0f0f;
+    font-family: serif;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
   }
 
-  /* TABS */
+  /* Scroll horizontal para las 9 categorías en móvil */
+  .tabs-container {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+  }
+  .tabs-container::-webkit-scrollbar {
+    display: none;
+  } /* Chrome/Safari */
+
   .tabs {
-    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;
   }
 
   .tab {
     background: none;
     border: none;
-    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
     cursor: pointer;
-    padding: 5px 10px;
-    white-space: nowrap;
+    color: #888;
+    transition: 0.3s;
+    text-transform: uppercase;
   }
 
   .tab.active {
-    border: 1px solid #3b0f0f;
+    color: #000;
+    border-bottom: 2px solid #000;
   }
 
-  /* BOTÓN */
-  .btn {
-    margin: 20px 0 50px;
-    padding: 10px 20px;
-    border: 2px solid #3b0f0f;
-    background: transparent;
-    cursor: pointer;
-  }
-
-  /* CONTENIDO */
-  .container-items-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    text-align: center;
-    max-width: 900px;
-    margin: auto;
-  }
-
-  .items {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  h2 {
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-  }
-
-  .item {
-    margin-bottom: 20px;
-    max-width: 250px;
-  }
-
-  .item h3 {
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin: 0;
-  }
-
-  .item p {
-    font-size: 13px;
-    margin: 5px 0;
-  }
-
-  .item span {
-    font-size: 13px;
-  }
-
-  /* ocultar menus */
+  /* Contenido */
   .menu-content {
     display: none;
+    max-width: 800px;
+    margin: auto;
+    animation: fadeIn 0.4s ease;
   }
-
   .menu-content.active {
     display: block;
   }
 
-  /* 📱 MOBILE */
-  @media (max-width: 1023px) {
-    .title {
-      font-size: 40px;
-      letter-spacing: 2px;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-    /* Tabs tipo scroll horizontal */
-    .tabs {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      justify-content: flex-start;
-      padding-bottom: 10px;
-    }
+  .category-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+  }
 
-    .tabs::-webkit-scrollbar {
-      display: none;
-    }
+  .menu-item {
+    margin-bottom: 20px;
+  }
 
-    .tab {
-      font-size: 13px;
-    }
+  .item-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
 
-    /* Items en columna */
-    .items {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
+  .item-header h3 {
+    font-size: 1rem;
+    margin: 0;
+    text-transform: uppercase;
+  }
 
-    .item {
-      max-width: 100%;
-    }
+  /* Los puntos elegantes */
+  .dots {
+    flex: 1;
+    border-bottom: 2px dotted #ccc;
+    height: 12px;
+  }
 
-    .container-items-menu {
-      gap: 40px;
-    }
+  .price {
+    font-weight: bold;
+  }
 
-    .btn {
-      margin: 20px 0 30px;
-    }
+  .menu-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 0;
+    font-style: italic;
   }
 </style>
 
