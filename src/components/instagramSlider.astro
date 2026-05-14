@@ -1,0 +1,147 @@
+---
+import image0 from "../assets/vav-ig-image-0.jpg?url";
+import image1 from "../assets/vav-ig-image-1.jpg?url";
+import image2 from "../assets/vav-ig-image-2.jpg?url";
+import image3 from "../assets/vav-ig-image-3.jpg?url";
+
+const posts = [
+  {
+    image: image0,
+    link: "https://www.instagram.com/reel/DX5J4H-Mjkh/?igsh=MWo0aWNuemgwMndrdg==",
+  },
+  {
+    image: image1,
+    link: "https://www.instagram.com/p/DXhLp8fjZ-o/?igsh=MWRrdnRhYzI4aXRhMA==",
+  },
+  {
+    image: image2,
+    link: "https://www.instagram.com/reel/DXcXxj0kcMp/?igsh=MWI4MWl6a2R4ajgyMA==",
+  },
+  {
+    image: image3,
+    link: "https://www.instagram.com/reel/DXM05e-j6Lt/?igsh=bXNxc2t5dGQ2NWtq",
+  },
+];
+---
+
+<section class="instagram-section">
+  <div class="section-header">
+    <p class="subtitle">INSTAGRAM</p>
+
+    <h2>Follow Our Moments</h2>
+
+    <a
+      href="https://www.instagram.com/visaviscafebistro/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="instagram-link"
+    >
+      @visaviscafebistro
+    </a>
+  </div>
+
+  <div class="swiper instagram-slider">
+    <div class="swiper-wrapper">
+      {
+        posts.map((post) => (
+          <div class="swiper-slide">
+            <a
+              href={post.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="image-link"
+            >
+              <img
+                src={post.image}
+                alt="Instagram post"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .instagram-section {
+    padding: 7rem 1.5rem;
+    overflow: hidden;
+  }
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-bottom: 3rem;
+
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1;
+    margin: 0;
+  }
+
+  .instagram-link {
+    text-decoration: none;
+    color: inherit;
+
+    border-bottom: 1px solid currentColor;
+
+    padding-bottom: 0.2rem;
+
+    transition: opacity 0.3s ease;
+  }
+
+  .instagram-link:hover {
+    opacity: 0.7;
+  }
+
+  .instagram-slider {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    overflow: hidden;
+    border-radius: 24px;
+  }
+
+  .image-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 24px;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+      transform 0.6s ease,
+      opacity 0.4s ease;
+  }
+
+  .swiper-slide:hover img {
+    transform: scale(1.05);
+    opacity: 0.92;
+  }
+</style>
+
+<script>
+  import "../scripts/instagram-slider.js";
+</script>
