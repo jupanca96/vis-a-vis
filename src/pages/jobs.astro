@@ -1,0 +1,359 @@
+---
+import Header from "../components/header.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Join the Vis-a-Vis team. Apply now by filling out our application form and uploading your CV."
+    />
+    <title>Jobs — Vis-a-Vis</title>
+  </head>
+
+  <style is:global>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: system-ui, sans-serif;
+    }
+  </style>
+
+  <body>
+    <Header />
+
+    <main class="jobs-page">
+      <!-- Hero banner -->
+      <div class="jobs-hero">
+        <h1 class="jobs-hero-title">JOIN OUR TEAM</h1>
+        <p class="jobs-hero-sub">
+          WE'RE ALWAYS LOOKING FOR PASSIONATE PEOPLE.<br />
+          FILL OUT THE FORM BELOW AND ATTACH YOUR CV TO APPLY.
+        </p>
+      </div>
+
+      <!-- Form section -->
+      <section class="form-section">
+        <form
+          class="jobs-form"
+          id="jobs-form"
+          enctype="multipart/form-data"
+          novalidate
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">FIRST NAME — <i>REQUIRED</i></label>
+              <input
+                type="text"
+                id="first-name"
+                name="first_name"
+                placeholder="FIRST NAME"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="last-name">LAST NAME — <i>REQUIRED</i></label>
+              <input
+                type="text"
+                id="last-name"
+                name="last_name"
+                placeholder="LAST NAME"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">PHONE NUMBER — <i>REQUIRED</i></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="PHONE NUMBER"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="address">ADDRESS — <i>REQUIRED</i></label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="STREET, CITY, STATE, ZIP"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="cv">CURRICULUM VITAE (PDF) — <i>REQUIRED</i></label>
+            <div class="file-wrapper" id="file-wrapper">
+              <input type="file" id="cv" name="cv" accept=".pdf" required />
+              <label for="cv" class="file-label" id="file-label">
+                <span class="file-icon">📄</span>
+                <span class="file-text" id="file-text"
+                  >CLICK TO UPLOAD YOUR CV (PDF ONLY)</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-button" id="submit-btn"
+            >APPLY NOW</button
+          >
+
+          <p class="privacy-note">
+            YOUR INFORMATION WILL BE KEPT CONFIDENTIAL AND USED SOLELY FOR
+            RECRUITMENT PURPOSES.
+          </p>
+        </form>
+      </section>
+    </main>
+    <style>
+      /* ── PAGE LAYOUT ── */
+      .jobs-page {
+        padding-top: 240px; /* height of fixed header */
+        background-color: #f4f1e9;
+        min-height: 100vh;
+        color: #3d1212;
+      }
+
+      /* ── HERO BANNER ── */
+      .jobs-hero {
+        background-color: #d9d4c7;
+        padding: 80px 20px 70px;
+        text-align: center;
+      }
+
+      .jobs-hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        letter-spacing: 10px;
+        margin: 0 0 24px;
+        text-transform: uppercase;
+        color: #3d1212;
+      }
+
+      .jobs-hero-sub {
+        font-size: 0.85rem;
+        letter-spacing: 2.5px;
+        line-height: 1.8;
+        text-transform: uppercase;
+        color: #3d1212;
+        margin: 0;
+        opacity: 0.85;
+      }
+
+      /* ── FORM SECTION ── */
+      .form-section {
+        padding: 80px 20px 100px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .jobs-form {
+        width: 100%;
+        max-width: 640px;
+      }
+
+      /* Two-column row for name fields */
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 28px;
+      }
+
+      .form-group label {
+        font-size: 0.72rem;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+
+      .form-group label i {
+        font-style: italic;
+        font-weight: normal;
+        opacity: 0.75;
+      }
+
+      /* Common input styles */
+      input[type="text"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 15px;
+        border: 1.5px solid #3d1212;
+        background: transparent;
+        font-family: inherit;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        color: #3d1212;
+        outline: none;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+      }
+
+      input[type="text"]::placeholder,
+      input[type="tel"]::placeholder {
+        color: rgba(61, 18, 18, 0.45);
+      }
+
+      input[type="text"]:focus,
+      input[type="tel"]:focus {
+        border-color: #3d1212;
+        box-shadow: 0 0 0 1px rgba(61, 18, 18, 0.2);
+      }
+
+      /* ── FILE UPLOAD ── */
+      input[type="file"] {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .file-wrapper {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .file-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 36px 20px;
+        border: 1.5px dashed #3d1212;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        text-align: center;
+      }
+
+      .file-label:hover {
+        background-color: rgba(61, 18, 18, 0.05);
+        border-style: solid;
+      }
+
+      .file-wrapper.has-file .file-label {
+        border-style: solid;
+        background-color: rgba(61, 18, 18, 0.07);
+      }
+
+      .file-icon {
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      .file-text {
+        font-size: 0.72rem;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #3d1212;
+        opacity: 0.8;
+      }
+
+      /* ── SUBMIT BUTTON ── */
+      .submit-button {
+        display: block;
+        margin: 20px auto 0;
+        padding: 16px 50px;
+        background-color: transparent;
+        border: 1.5px solid #3d1212;
+        color: #3d1212;
+        font-family: inherit;
+        font-size: 0.85rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .submit-button:hover {
+        background-color: #3d1212;
+        color: #f4f1e9;
+      }
+
+      /* ── PRIVACY NOTE ── */
+      .privacy-note {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+        opacity: 0.6;
+        margin-top: 24px;
+      }
+
+      /* ── MOBILE ── */
+      @media (max-width: 1023px) {
+        .jobs-page {
+          padding-top: 90px; /* shorter header on mobile */
+        }
+
+        .jobs-hero {
+          padding: 60px 20px 50px;
+        }
+
+        .jobs-hero-title {
+          font-size: 2.2rem;
+          letter-spacing: 5px;
+        }
+
+        .jobs-hero-sub {
+          font-size: 0.78rem;
+          letter-spacing: 1.5px;
+        }
+
+        .form-section {
+          padding: 50px 20px 70px;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .jobs-hero-title {
+          font-size: 1.8rem;
+          letter-spacing: 4px;
+        }
+
+        .submit-button {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    </style>
+
+    <script>
+      import "../scripts/jobs.js";
+    </script>
+  </body>
+</html>
