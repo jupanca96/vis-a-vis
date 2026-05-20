@@ -1,0 +1,134 @@
+---
+import Header from "../components/header.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reservas — Vis-a-Vis</title>
+  </head>
+
+  <style is:global>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: system-ui, sans-serif;
+    }
+  </style>
+
+  <body>
+    <Header />
+
+    <main class="booking-page">
+      <!-- Banner Principal -->
+      <div class="booking-hero">
+        <h1 class="booking-hero-title">BOOK A TABLE</h1>
+        <p class="booking-hero-sub">
+          SELECT YOUR PREFERRED DATE AND TIME.<br />
+          WE LOOK FORWARD TO WELCOMING YOU.
+        </p>
+      </div>
+
+      <section class="calendar-section">
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/dev-moan/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+          style="min-width:320px;height:700px;"
+        >
+        </div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
+        <!-- Calendly inline widget end -->
+      </section>
+    </main>
+    <style>
+      /* Mismo diseño estético que tu sección de empleos */
+      .booking-page {
+        padding-top: 240px; /* Altura de tu header fijo */
+        background-color: #f4f1e9;
+        min-height: 100vh;
+        color: #3d1212;
+      }
+
+      .booking-hero {
+        background-color: #d9d4c7;
+        padding: 80px 20px 70px;
+        text-align: center;
+      }
+
+      .booking-hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        letter-spacing: 10px;
+        margin: 0 0 24px;
+        text-transform: uppercase;
+        color: #3d1212;
+      }
+
+      .booking-hero-sub {
+        font-size: 0.85rem;
+        letter-spacing: 2.5px;
+        line-height: 1.8;
+        text-transform: uppercase;
+        color: #3d1212;
+        margin: 0;
+        opacity: 0.85;
+      }
+
+      .calendar-section {
+        padding: 60px 20px 100px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .calendar-wrapper {
+        width: 100%;
+        max-width: 900px; /* Ancho cómodo para mostrar el calendario completo */
+        background: #ffffff;
+        border: 1.5px solid #3d1212;
+        padding: 20px;
+        box-shadow: 4px 4px 0px rgba(61, 18, 18, 0.1);
+      }
+
+      /* Adaptación para pantallas móviles */
+      @media (max-width: 1023px) {
+        .booking-page {
+          padding-top: 90px;
+        }
+
+        .booking-hero {
+          padding: 60px 20px 50px;
+        }
+
+        .booking-hero-title {
+          font-size: 2.2rem;
+          letter-spacing: 5px;
+        }
+
+        .calendar-section {
+          padding: 30px 10px 60px;
+        }
+
+        .calendar-wrapper {
+          padding: 0;
+          border: none;
+          box-shadow: none;
+          background: transparent;
+        }
+      }
+    </style>
+  </body>
+</html>

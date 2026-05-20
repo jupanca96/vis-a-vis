@@ -11,41 +11,45 @@ import Caffe1 from "../components/caffee1.astro";
 import Caffe2 from "../components/caffe2.astro";
 import Jobs from "../components/jobs.astro";
 import Contact from "../components/contact.astro";
-import InstagramSlider from "../components/instagramSlider.astro";	
+import InstagramSlider from "../components/instagramSlider.astro";
+import Reservation from "../components/reservation.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<style is:global>
-		*, *::before, *::after {
-			box-sizing: border-box;
-		}
-		html, body {
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			overflow-x: hidden;
-			font-family: system-ui, sans-serif;
-		}
-	</style>
-	<body>
-		<Header />
-		<Hero />
-		<Info />
-		<Map />
-		<ImgFood1 />
-		<Menu />
-		<InstagramSlider />
-		<Tables />
-		<Jobs />
-		<Caffe2 />
-		<Contact />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <style is:global>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: system-ui, sans-serif;
+    }
+  </style>
+  <body>
+    <Header />
+    <Hero />
+    <Info />
+    <Map />
+    <ImgFood1 />
+    <Menu />
+    <InstagramSlider />
+    <Tables />
+    <Jobs />
+    <Caffe2 />
+    <Reservation />
+  </body>
 </html>
